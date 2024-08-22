@@ -1,0 +1,167 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark gray text color */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 700;
+    text-align: center;
+    margin: 40px 0 20px; /* Larger top margin for h1 */
+    padding: 0;
+    color: #333; /* Dark gray text color */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Increased letter spacing for emphasis */
+    border-bottom: 2px solid #ccc; /* Bottom border for separation */
+    padding-bottom: 5px; /* Padding below text */
+}
+
+h2 {
+    font-size: 1.5em; /* Adjust as needed for hierarchy */
+    font-weight: 700;
+    text-align: center;
+    margin: 20px 0; /* Standard margin for h2 */
+    padding: 0;
+    color: #333; /* Dark gray text color */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Increased letter spacing for emphasis */
+    border-bottom: 2px solid #ccc; /* Bottom border for separation */
+    padding-bottom: 5px; /* Padding below text */
+}
+
+#events {
+    margin: 10px;
+    text-align: center;
+}
+
+button {
+    background-color: #4CAF50; 
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049; 
+}
+
+button:active {
+    background-color: #3e8e41; 
+}
+
+#taskContainer {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background: #fff; /* White background */
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.task input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.task button {
+    background-color: #3498db; /* Soft blue background */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.task button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+.task.completed {
+    animation: completeAnimation 0.5s;
+}
+
+@keyframes addNewTaskAnimation{
+    0%{
+        transform: scale(1);
+    }
+
+    50%{
+        transform: scale(1.1);
+    }
+
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+@keyframes completeAnimation {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+@keyframes clearAnimation {
+    0%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+
+.task.add{
+    animation: addNewTaskAnimation 0.5s;
+}
+
+.task.clearing {
+    animation: clearAnimation 0.5s ease forwards;
+}
+
+#indicatorIcons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.indicator {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    font-size: 1.2em;
+}
